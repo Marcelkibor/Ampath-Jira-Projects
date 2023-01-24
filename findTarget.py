@@ -15,4 +15,4 @@ def findTargetIndex(nums,target):
         else:
             return -1
 print(findTargetIndex([1,4,0,-1,6,3,2],-1))
-print(findTargetIndex([1,4,0,-1,6,3,2],0))
+print(findTargetIndex([1,4,8,0,-1,6,3,2],0))
