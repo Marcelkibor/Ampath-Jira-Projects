@@ -1,21 +1,21 @@
-# in this example, a class is created to handle all the payment functionality.
-# The class contains three functions which have seperate roles but don't enterfere with each other
-class PaymentHandler:
+#idea-> class 1 resp, one reason to change
+
+class Payment:
     def __init__(self):
         self.balance = 0
 
-    def addPayment(self, amount):
-        print("old balance is", self.balance)
+    def depositAmount(self, amount):
         # adding amount to the balance
         self.balance += amount
-        print("new balance is",self.balance)
+        print("balance after deposit->",self.balance)
 
-    def processBalance(self, amount):
-        # this takes in a payed amount and subtracts it from the balance
+    def processPayment(self, amount):
+        #balance should always be greater than payed amount
         if self.balance >= amount:
             self.balance -= amount
+            print("balance after making payment->{}".format(self.balance))
         else:
             return "Illegal Operation"
-handlePay = PaymentHandler()
-handlePay.addPayment(10)
-handlePay.processBalance(5)
+handlePay = Payment()
+handlePay.depositAmount(10)
+handlePay.processPayment(50)
