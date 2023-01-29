@@ -1,4 +1,4 @@
-#idea-> class 1 resp, one reason to change
+#idea-> class should have 1 resp, one reason to change
 
 class Payment:
     def __init__(self):
@@ -14,8 +14,8 @@ class Payment:
         if self.balance >= amount:
             self.balance -= amount
             print("balance after making payment->{}".format(self.balance))
-        else:
-            return "Illegal Operation"
+        if self.balance< amount:
+            print("insufficient funds")
 handlePay = Payment()
 handlePay.depositAmount(10)
 handlePay.processPayment(50)
